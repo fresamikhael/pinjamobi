@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RentalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/car', [CarController::class, 'index'])->name('cars');
+
+Route::get('/rentals', [RentalController::class, 'index'])->name('rentals');
+Route::get('/rentals/{id}', [RentalController::class, 'detail'])->name('rental-detail');
+
+Route::get('/faq', [FAQController::class, 'index'])->name('faq');
+
+Route::get('/register', [FAQController::class, 'index'])->name('register');
+Route::get('/login', [FAQController::class, 'index'])->name('login');
